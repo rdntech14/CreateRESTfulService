@@ -39,7 +39,7 @@ Following Request can be sent (Postman as client can be used)
 
 ***Examples :***
 
-**GET Request Example**
+**GET**
 
 *All employees*
 
@@ -77,7 +77,7 @@ Output :
 ]
 ```
 
-**GET Request Example**
+**GET**
 
 **One employees**
 
@@ -95,7 +95,7 @@ Output :
 ]
 ```
 
-**PUT request Example**
+**PUT**
 
 URL : http://localhost:8080/CreateRESTFulService/rest/employee/update/1
 
@@ -106,7 +106,7 @@ Output :
 }
 ```
 
-**POST request Example**
+**POST**
 
 URL : http://localhost:8080/CreateRESTFulService/rest/employee/add
 
@@ -128,7 +128,7 @@ Output :
 }
 ```
 
-**Delete request Example**
+**Delete**
 
 URL : http://localhost:8080/CreateRESTFulService/rest/employee/delete/1
 
@@ -146,12 +146,15 @@ Output :
 ***GET**
 
 200 (OK)
+
 404 (NOT FOUND)
+
 400 (BAD REQUEST)
 
 ***POST***
 
-201 (Created) --> resource/json is return
+201 (Created) --> resource/JSON is return
+
 200 (OK) or 204 (No Content) --> when no resource is return
 
 
@@ -160,17 +163,23 @@ Output :
 ***PUT***
 
 201 (Created) - If a new resource has been created by the PUT API,
+
 200 (OK) or 204 (No Content)  - if an existing resource is modified, either the 200 (OK) or 204 (No Content)
 
 ***DELTE***
 
 200 (OK) if the response includes an entity describing the status
+
 202 (Accepted) if the action has been queued
+
 204 (No Content) if the action has been performed but the response does not include an entity.
 
 ***Common HTTP Status code***
 
 2xx --> Success 
+
 3xx --> multiple request
+
 4xx --> Client side error
+
 5xx --> Server side error
