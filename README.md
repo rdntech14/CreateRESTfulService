@@ -143,7 +143,7 @@ Output :
 
 ***REST API Response http Status code following methods:***
 
-***GET**
+***GET***
 
 200 (OK)
 
