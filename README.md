@@ -1,10 +1,9 @@
 Create RESTful API
 =====
 
-This example demo how to create RESTful with GET/PUT/POST/DELETE method what accepts JSON.
+This demo shows how to create RESTful with GET/PUT/POST/DELETE method what accepts JSON.
 
-This is built using 
-Jersey 2 API + Tomcat + JAVA
+Using Jersey 2 API + Tomcat + JAVA
 =====
 
 **Pre-requisite**
@@ -37,7 +36,7 @@ User can send following Request, Postman can be used to send request
 	
 	where id is a number
 
-Examples :
+***Examples :***
 
 **GET Request Example**
 *All employees*
@@ -127,30 +126,30 @@ Output :
 ```
 
 
-REST API Response http Status code following methods:
+***REST API Response http Status code following methods:***
 
-GET
+***GET**
 200 (OK)
 404 (NOT FOUND)
 400 (BAD REQUEST)
 
-POST
+***POST***
 201 (Created) --> resource/json is return
 200 (OK) or 204 (No Content) --> when no resource is return
 
 
 **Note : Many times, the action performed by the POST method might not result in a resource that can be identified by a URI. In this case, either HTTP response code 200 (OK) or 204 (No Content) is the appropriate response status.**
 
-PUT
+***PUT***
 201 (Created) - If a new resource has been created by the PUT API,
 200 (OK) or 204 (No Content)  - if an existing resource is modified, either the 200 (OK) or 204 (No Content)
 
-DELTE
+***DELTE***
 200 (OK) if the response includes an entity describing the status
 202 (Accepted) if the action has been queued
 204 (No Content) if the action has been performed but the response does not include an entity.
 
-Common HTTP Status code
+***Common HTTP Status code***
 2xx --> Success 
 3xx --> multiple request
 4xx --> Client side error
