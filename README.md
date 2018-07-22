@@ -158,7 +158,7 @@ Output :
 200 (OK) or 204 (No Content) --> when no resource is return
 
 
-**Note : Many times, the action performed by the POST method might not result in a resource that can be identified by a URI. In this case, either HTTP response code 200 (OK) or 204 (No Content) is the appropriate response status.**
+*Note : Many times, the action performed by the POST method might not result in a resource that can be identified by a URI. In this case, either HTTP response code 200 (OK) or 204 (No Content) is the appropriate response status.*
 
 ***PUT***
 
