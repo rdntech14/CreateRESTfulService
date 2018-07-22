@@ -26,7 +26,8 @@ http://tomcatplugin.sf.net/update
 Run project as "Run on Server"
 
 **Test**
-User can send following Request, Postman can be used to send request
+
+Following Request can be sent (Postman as client can be used)
 
 	http://localhost:8080/CreateRESTFulService/employee/list — to get all employees list
 	http://localhost:8080/CreateRESTFulService/employee/list/id — to get specific id from employee list
@@ -39,10 +40,13 @@ User can send following Request, Postman can be used to send request
 ***Examples :***
 
 **GET Request Example**
+
 *All employees*
+
 URL : http://localhost:8080/CreateRESTFulService/employee/list
 
 Output :
+
 ```
 [
     {
@@ -74,10 +78,13 @@ Output :
 ```
 
 **GET Request Example**
-**One employees*
+
+**One employees**
+
 URL : http://localhost:8080/CreateRESTFulService/employee/list/1
 
 Output :
+
 ```
 [
     {
@@ -89,6 +96,7 @@ Output :
 ```
 
 **PUT request Example**
+
 URL : http://localhost:8080/CreateRESTFulService/rest/employee/update/1
 
 ```
@@ -99,9 +107,11 @@ Output :
 ```
 
 **POST request Example**
+
 URL : http://localhost:8080/CreateRESTFulService/rest/employee/add
 
 Input :
+
 ```
 {
         "firstName": "first7",
@@ -109,16 +119,21 @@ Input :
         "lastName": "last7"
 }
 ```
+
 Output :
+
 ```
 {
     "message": "Employee Added"
 }
 ```
+
 **Delete request Example**
+
 URL : http://localhost:8080/CreateRESTFulService/rest/employee/delete/1
 
 Output :
+
 ```
 {
     "message": "employee deleted"
@@ -129,11 +144,13 @@ Output :
 ***REST API Response http Status code following methods:***
 
 ***GET**
+
 200 (OK)
 404 (NOT FOUND)
 400 (BAD REQUEST)
 
 ***POST***
+
 201 (Created) --> resource/json is return
 200 (OK) or 204 (No Content) --> when no resource is return
 
@@ -141,15 +158,18 @@ Output :
 **Note : Many times, the action performed by the POST method might not result in a resource that can be identified by a URI. In this case, either HTTP response code 200 (OK) or 204 (No Content) is the appropriate response status.**
 
 ***PUT***
+
 201 (Created) - If a new resource has been created by the PUT API,
 200 (OK) or 204 (No Content)  - if an existing resource is modified, either the 200 (OK) or 204 (No Content)
 
 ***DELTE***
+
 200 (OK) if the response includes an entity describing the status
 202 (Accepted) if the action has been queued
 204 (No Content) if the action has been performed but the response does not include an entity.
 
 ***Common HTTP Status code***
+
 2xx --> Success 
 3xx --> multiple request
 4xx --> Client side error
