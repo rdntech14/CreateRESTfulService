@@ -6,6 +6,7 @@ This demo shows following
 2) how to create GET/PUT/POST/DELETE methods,
 3) Methods Accepts JSON
 4) Export project as .war file and run under tomcat.
+5) Exported jar is placed under 
 
 Using Jersey 2 API + Tomcat + JAVA
 =====
@@ -27,21 +28,26 @@ http://tomcatplugin.sf.net/update
 6. web.xml - add code present in web.xml
 Run project as "Run on Server"
 7. Export project as .war file
-8. Place under tomcat webapps folder and start tomcat server.
+8. Place ProjectOutputWar/CreateRESTFulService.war under tomcat webapps folder and start tomcat server.
 
 **Test**
 
-Following Request can be sent (Postman as client can be used) with Header value Content-type : application/json
+To test this project place CreateRESTFulService.war from ProjectOutputWar/CreateRESTFulService.war to under tomcat webapps folder and start tomcat.
 
-*Note: this will not work over browser as this is only supporting JSON, and no query parameter is set to take input for format.*
+Try following request using Postman with Header value *Content-type : application/json*
+
+*Note: this will not work over browser as this is only supporting JSON, and no query parameter is set to take input for different formats like plain text, xml etc*
 	
 	http://localhost:8080/CreateRESTFulService/rest/employee/list — to get all employees list
+	
 	http://localhost:8080/CreateRESTFulService/rest/employee/list/id — to get specific id from employee list
+	
 	http://localhost:8080/CreateRESTFulService/rest/employee/add — to add an employee to employee list
+	
 	http://localhost:8080/CreateRESTFulService/rest/employee/delete/id — to delete an employee
+	
 	http://localhost:8080/CreateRESTFulService/rest/employee/update/id — to update an employee info
 	
-	where id is a number
 
 ***Examples :***
 
@@ -85,7 +91,7 @@ Output :
 
 **GET**
 
-**One employees**
+**One employee**
 
 URL : http://localhost:8080/CreateRESTFulService/rest/employee/list/1002
 
@@ -102,6 +108,8 @@ Output :
 ```
 
 **PUT**
+
+**Update employee**
 
 URL : http://localhost:8080/CreateRESTFulService/rest/employee/update/1003
 
@@ -127,6 +135,8 @@ Output :
 
 **POST**
 
+**Add employee**
+
 URL : http://localhost:8080/CreateRESTFulService/rest/employee/add
 
 Input :
@@ -149,7 +159,9 @@ Output :
 
 **Delete**
 
-URL : http://localhost:8080/CreateRESTFulService/rest/employee/delete/1
+**Delete employee**
+
+URL : http://localhost:8080/CreateRESTFulService/rest/employee/delete/1001
 
 Output :
 
