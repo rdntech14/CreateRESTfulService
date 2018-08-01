@@ -1,12 +1,13 @@
 Create RESTful API
 =====
 
-This demo shows following
+**This project demonstrates following**
+
 1) how to create RESTful service.
 2) how to create GET/PUT/POST/DELETE methods,
-3) Methods Accepts JSON
-4) Export project as .war file and run under tomcat.
-5) Exported jar is placed under 
+3) methods Accepts JSON
+4) export project as .war file and run under tomcat.
+5) project complied .war file available under ProjectOutputWar/CreateRESTFulService.war
 
 Using Jersey 2 API + Tomcat + JAVA
 =====
