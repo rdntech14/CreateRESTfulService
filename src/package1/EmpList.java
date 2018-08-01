@@ -9,22 +9,38 @@ public class EmpList {
 	static EmpList e = new EmpList();
 
 	private EmpList() {
-		empList = new ArrayList();
+		
+		 String nameFirstArr[] = {"Anne", "Ben", "Joe", "Mike","Tom"};
+		 String nameLastArr[] = {"Brown", "Miller", "Johnson", "Smith","Williams"};
+		 
+		empList = new ArrayList<Employee>();
 
-		for (int i = 1; i <= 5; i++) {
+		for (int i = 0; i <= 4; i++) {
 			Employee emp = null;
 			emp = new Employee();
-			emp.setId(i);
-			emp.setFirstName("first" + i);
-			emp.setLastName("last" + i);
+			emp.setId(1001 + i);
+			emp.setFirstName(nameFirstArr[i]);
+			emp.setLastName(nameLastArr[i]);
 
 			empList.add(emp);
 		}
-		System.out.println("empList created one time");
+		System.out.println("empList created - first time");
 	}
 
 	public static List<Employee> getEmpList() {
 		return empList;
+	}
+	
+	public static List<Employee> getEmpList(int id) {
+		List<Employee> employeelist = new ArrayList<>();
+		for (Employee e : empList) {
+			if (e.getId() == id) {
+				employeelist.add(e);
+				return employeelist;
+			}
+		}
+		return employeelist;
+		
 	}
 
 	public static void addEmployee(Employee e) {

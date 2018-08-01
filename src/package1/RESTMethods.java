@@ -15,12 +15,13 @@ import javax.ws.rs.DELETE;
 @Path("/employee")
 public class RESTMethods {
 
+
 /*	
-	http://localhost:8080/CreateRESTFulService/employee/list — to get all employees list
-	http://localhost:8080/CreateRESTFulService/employee/list/id — to get specific id from employee list
-	http://localhost:8080/CreateRESTFulService/employee/add — to add an employee to employee list
-	http://localhost:8080/CreateRESTFulService/employee/delete/id — to delete an employee
-	http://localhost:8080/CreateRESTFulService/employee/update/id — to update an employee info
+	http://localhost:8080/CreateRESTFulService/rest/employee/list — to get all employees list
+	http://localhost:8080/CreateRESTFulService/rest/employee/list/id — to get specific id from employee list
+	http://localhost:8080/CreateRESTFulService/rest/employee/add — to add an employee to employee list
+	http://localhost:8080/CreateRESTFulService/rest/employee/delete/id — to delete an employee
+	http://localhost:8080/CreateRESTFulService/rest/employee/update/id — to update an employee info
 */
 	
 	ResultOK result ;
@@ -37,7 +38,7 @@ public class RESTMethods {
 	@Path("list/{id}")
 	@Produces({MediaType.APPLICATION_JSON,MediaType.APPLICATION_XML})
 	public List<Employee> getEmployee(@PathParam("id") int id){
-		return EmpList.getEmpList();
+		return EmpList.getEmpList(id);
 	}
 	
 	@POST

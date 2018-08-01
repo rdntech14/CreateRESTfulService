@@ -1,7 +1,11 @@
 Create RESTful API
 =====
 
-This demo shows how to create RESTful with GET/PUT/POST/DELETE method what accepts JSON.
+This demo shows following
+1) how to create RESTful service.
+2) how to create GET/PUT/POST/DELETE methods,
+3) Methods Accepts JSON
+4) Export project as .war file and run under tomcat.
 
 Using Jersey 2 API + Tomcat + JAVA
 =====
@@ -20,20 +24,22 @@ http://tomcatplugin.sf.net/update
 4. Create "Dynamic Web Project" in Eclipse with name "CreateRESTFulService" & make sure to select "Generate Web.xml deployment descriptor"
 4. Download Jersey from https://jersey.github.io/download.html --> "Jersey JAX-RS 2.1 RI bundle", unzip it
 5. Add Jersey to Eclipse Project, navigate to Eclipse Project WebContent-->Web-INF--> lib --> <place all jersey jars>
-6. Under Java Resource/src create package "package1" and java class "FirstRest"
-7. Add code present in FirstRest.Java in FirstRest
-8. web.xml - add code present in web.xml
+6. web.xml - add code present in web.xml
 Run project as "Run on Server"
+7. Export project as .war file
+8. Place under tomcat webapps folder and start tomcat server.
 
 **Test**
 
-Following Request can be sent (Postman as client can be used)
+Following Request can be sent (Postman as client can be used) with Header value Content-type : application/json
 
-	http://localhost:8080/CreateRESTFulService/employee/list — to get all employees list
-	http://localhost:8080/CreateRESTFulService/employee/list/id — to get specific id from employee list
-	http://localhost:8080/CreateRESTFulService/employee/add — to add an employee to employee list
-	http://localhost:8080/CreateRESTFulService/employee/delete/id — to delete an employee
-	http://localhost:8080/CreateRESTFulService/employee/update/id — to update an employee info
+*Note: this will not work over browser as this is only supporting JSON, and no query parameter is set to take input for format.*
+	
+	http://localhost:8080/CreateRESTFulService/rest/employee/list — to get all employees list
+	http://localhost:8080/CreateRESTFulService/rest/employee/list/id — to get specific id from employee list
+	http://localhost:8080/CreateRESTFulService/rest/employee/add — to add an employee to employee list
+	http://localhost:8080/CreateRESTFulService/rest/employee/delete/id — to delete an employee
+	http://localhost:8080/CreateRESTFulService/rest/employee/update/id — to update an employee info
 	
 	where id is a number
 
@@ -43,36 +49,36 @@ Following Request can be sent (Postman as client can be used)
 
 *All employees*
 
-URL : http://localhost:8080/CreateRESTFulService/employee/list
+URL : http://localhost:8080/CreateRESTFulService/rest/employee/list
 
 Output :
 
 ```
 [
     {
-        "firstName": "first111",
-        "id": 1,
-        "lastName": "last11111111"
+        "firstName": "Anne",
+        "id": 1001,
+        "lastName": "Brown"
     },
     {
-        "firstName": "first2",
-        "id": 2,
-        "lastName": "last2"
+        "firstName": "Ben",
+        "id": 1002,
+        "lastName": "Miller"
     },
     {
-        "firstName": "first3",
-        "id": 3,
-        "lastName": "last3"
+        "firstName": "Joe",
+        "id": 1003,
+        "lastName": "Johnson"
     },
     {
-        "firstName": "first4",
-        "id": 4,
-        "lastName": "last4"
+        "firstName": "Mike",
+        "id": 1004,
+        "lastName": "Smith"
     },
     {
-        "firstName": "first5",
-        "id": 5,
-        "lastName": "last5"
+        "firstName": "Tom",
+        "id": 1005,
+        "lastName": "Williams"
     }
 ]
 ```
@@ -81,26 +87,39 @@ Output :
 
 **One employees**
 
-URL : http://localhost:8080/CreateRESTFulService/employee/list/1
+URL : http://localhost:8080/CreateRESTFulService/rest/employee/list/1002
 
 Output :
 
 ```
 [
     {
-        "firstName": "first111",
-        "id": 1,
-        "lastName": "last11111111"
+        "firstName": "Ben",
+        "id": 1002,
+        "lastName": "Miller"
     }
 ]
 ```
 
 **PUT**
 
-URL : http://localhost:8080/CreateRESTFulService/rest/employee/update/1
+URL : http://localhost:8080/CreateRESTFulService/rest/employee/update/1003
+
+Input 
 
 ```
+{
+    {
+        "firstName": "Joe",
+        "id": 1003,
+        "lastName": "Lisa"
+    }
+}
+```
+
 Output :
+
+```
 {
     "message": "Employee Updated"
 }
@@ -114,9 +133,9 @@ Input :
 
 ```
 {
-        "firstName": "first7",
-        "id": 7,
-        "lastName": "last7"
+        "firstName": "Alex",
+        "id": 1007,
+        "lastName": "The Great"
 }
 ```
 
@@ -183,3 +202,4 @@ Output :
 4xx --> Client side error
 
 5xx --> Server side error
+
