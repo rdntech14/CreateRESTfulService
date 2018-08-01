@@ -1,4 +1,4 @@
-Create RESTful API
+Create & Host RESTful API
 =====
 
 **This project demonstrates following**
