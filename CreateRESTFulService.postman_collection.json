@@ -1,0 +1,131 @@
+{
+	"info": {
+		"_postman_id": "71e9ab77-6030-405a-b50d-97c1767fcd23",
+		"name": "TestEmployeeCollection copy",
+		"description": "This is a collection for CreateRESTFulService.war",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "GetEmplyeeList",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8080/CreateRESTFulService/rest/employee/list",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"CreateRESTFulService",
+						"rest",
+						"employee",
+						"list"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "UpdateEmployee",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n        \"firstName\": \"Joe\",\n        \"id\": 1004,\n        \"lastName\": \"Lisa\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/CreateRESTFulService/rest/employee/update/1004",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"CreateRESTFulService",
+						"rest",
+						"employee",
+						"update",
+						"1004"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PostAddEmployee",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n        \"firstName\": \"Alex\",\n        \"id\": 1007,\n        \"lastName\": \"The Great\"\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/CreateRESTFulService/rest/employee/add",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"CreateRESTFulService",
+						"rest",
+						"employee",
+						"add"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DeleteEmplyee",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:8080/CreateRESTFulService/rest/employee/delete/1001",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"CreateRESTFulService",
+						"rest",
+						"employee",
+						"delete",
+						"1001"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
