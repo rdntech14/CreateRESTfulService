@@ -112,7 +112,7 @@ Output :
 
 **Update employee**
 
-URL : http://localhost:8080/CreateRESTFulService/rest/employee/update/1003
+URL : http://localhost:8080/CreateRESTFulService/rest/employee/update
 
 Input 
 
@@ -158,6 +158,34 @@ Output :
 }
 ```
 
+**Add multiple employees**
+
+URL : http://localhost:8080/CreateRESTFulService/rest/employee/addMultiple
+
+Input :
+
+```
+[{
+		"firstName": "Alex",
+		"id": 1009,
+		"lastName": "The Great"
+	},
+	{
+		"firstName": "Alex",
+		"id": 1010,
+		"lastName": "The Great"
+	}
+]
+```
+
+Output :
+
+```
+{
+    "message": "Multiple Employees Added"
+}
+```
+
 **Delete**
 
 **Delete employee**
@@ -170,6 +198,33 @@ Output :
 {
     "message": "employee deleted"
 }
+```
+
+**Delete multiple employees**
+
+URL : http://localhost:8080/CreateRESTFulService/rest/employee/deleteMultiple
+
+Input :
+
+```
+[{
+	"id": 1001
+}, {
+	"id": 1002
+}]
+```
+
+Output :
+
+```
+[
+    {
+        "message": "ids : 1001 -- Employee Deleted"
+    },
+    {
+        "message": "ids : 1002 -- Employee Deleted"
+    }
+]
 ```
 
 
