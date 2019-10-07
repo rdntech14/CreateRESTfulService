@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "93ad5743-24a7-459c-880f-7c136187b524",
+		"_postman_id": "1120eb79-ff42-4360-b2dc-e4036e4f3b8a",
 		"name": "CreateRESTfulService",
 		"description": "This is a collection for CreateRESTFulService.war",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
@@ -75,7 +75,7 @@
 				],
 				"body": {
 					"mode": "raw",
-					"raw": "{\n        \"firstName\": \"Alex\",\n        \"id\": 1007,\n        \"lastName\": \"The Great\"\n}"
+					"raw": "{\n        \"firstName\": \"Alex\",\n        \"id\": 1010,\n        \"lastName\": \"The Great\"\n}"
 				},
 				"url": {
 					"raw": "http://localhost:8080/CreateRESTfulService/rest/employee/add",
@@ -121,6 +121,68 @@
 						"employee",
 						"delete",
 						"1001"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "DeleteEmplyees",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "[{\n\t\"id\": 1001\n}, {\n\t\"id\": 1002\n}]"
+				},
+				"url": {
+					"raw": "http://localhost:8080/CreateRESTfulService/rest/employee/deleteMultiple",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"CreateRESTfulService",
+						"rest",
+						"employee",
+						"deleteMultiple"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PostAddEmployees",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "[{\n\t\t\"firstName\": \"Alex\",\n\t\t\"id\": 1009,\n\t\t\"lastName\": \"The Great\"\n\t},\n\t{\n\t\t\"firstName\": \"Alex\",\n\t\t\"id\": 1010,\n\t\t\"lastName\": \"The Great\"\n\t}\n]"
+				},
+				"url": {
+					"raw": "http://localhost:8080/CreateRESTfulService/rest/employee/addMultiple",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"CreateRESTfulService",
+						"rest",
+						"employee",
+						"addMultiple"
 					]
 				}
 			},

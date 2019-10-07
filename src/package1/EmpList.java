@@ -9,10 +9,10 @@ public class EmpList {
 	static EmpList e = new EmpList();
 
 	private EmpList() {
-		
-		 String nameFirstArr[] = {"Anne", "Ben", "Joe", "Mike","Tom"};
-		 String nameLastArr[] = {"Brown", "Miller", "Johnson", "Smith","Williams"};
-		 
+
+		String nameFirstArr[] = { "Anne", "Ben", "Joe", "Mike", "Tom" };
+		String nameLastArr[] = { "Brown", "Miller", "Johnson", "Smith", "Williams" };
+
 		empList = new ArrayList<Employee>();
 
 		for (int i = 0; i <= 4; i++) {
@@ -30,7 +30,7 @@ public class EmpList {
 	public static List<Employee> getEmpList() {
 		return empList;
 	}
-	
+
 	public static List<Employee> getEmpList(int id) {
 		List<Employee> employeelist = new ArrayList<>();
 		for (Employee e : empList) {
@@ -40,7 +40,7 @@ public class EmpList {
 			}
 		}
 		return employeelist;
-		
+
 	}
 
 	public static void addEmployee(Employee e) {
@@ -63,7 +63,7 @@ public class EmpList {
 		}
 
 	}
-	
+
 	public static String updateEmployee(Employee updateE) {
 		boolean updateStatus = false;
 		for (Employee e : empList) {

@@ -1,5 +1,6 @@
 package package1;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.ws.rs.GET;
@@ -58,6 +59,19 @@ public class RESTMethods {
 		return result;
 	}
 
+	@POST
+	@Path("addMultiple")
+	@Consumes({ MediaType.APPLICATION_JSON })
+	@Produces({ MediaType.APPLICATION_JSON })
+	public Message createEmployeeMultiple(List<Employee> emp) {
+		for (Employee e : emp) {
+			EmpList.addEmployee(e);
+		}
+		result = new Message("Multiple Employees Added");
+		System.out.println(result.getMessage());
+		return result;
+	}
+
 	@PUT
 	@Path("update")
 	@Consumes({ MediaType.APPLICATION_JSON })
@@ -82,6 +96,22 @@ public class RESTMethods {
 		result = new Message(s);
 		System.out.println(result.getMessage());
 		return result;
+	}
+
+	@DELETE
+	@Path("deleteMultiple")
+	@Consumes({ MediaType.APPLICATION_JSON })
+	@Produces({ MediaType.APPLICATION_JSON })
+	public List<Message> deleteEmployees(List<EmployeeId> idList) {
+
+		List<Message> messageList = new ArrayList<>();
+
+		for (EmployeeId ids : idList) {
+			String s = EmpList.deleteEmployee(ids.getId());
+			messageList.add(new Message("ids : " + ids.getId() + " -- " + s));
+		}
+		System.out.println();
+		return messageList;
 	}
 
 }

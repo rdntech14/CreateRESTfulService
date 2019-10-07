@@ -12,9 +12,4 @@ public class Message {
 		return message;
 	}
 
-	@Override
-	public String toString() {
-		return "ResultOK [result=" + message + "]";
-	}
-
 }
