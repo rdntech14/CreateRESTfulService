@@ -15,69 +15,73 @@ import javax.ws.rs.DELETE;
 @Path("/employee")
 public class RESTMethods {
 
+	/*
+	 * http://localhost:8080/CreateRESTfulService/rest/employee/list — to get all
+	 * employees list
+	 * http://localhost:8080/CreateRESTfulService/rest/employee/list/id — to get
+	 * specific id from employee list
+	 * http://localhost:8080/CreateRESTfulService/rest/employee/add — to add an
+	 * employee to employee list
+	 * http://localhost:8080/CreateRESTfulService/rest/employee/delete/id — to
+	 * delete an employee
+	 * http://localhost:8080/CreateRESTfulService/rest/employee/update — to update
+	 * an employee info
+	 */
 
-/*	
-	http://localhost:8080/CreateRESTFulService/rest/employee/list — to get all employees list
-	http://localhost:8080/CreateRESTFulService/rest/employee/list/id — to get specific id from employee list
-	http://localhost:8080/CreateRESTFulService/rest/employee/add — to add an employee to employee list
-	http://localhost:8080/CreateRESTFulService/rest/employee/delete/id — to delete an employee
-	http://localhost:8080/CreateRESTFulService/rest/employee/update/id — to update an employee info
-*/
-	
-	ResultOK result ;
-	
+	Message result;
+
 	@GET
 	@Path("list")
 	@Produces(MediaType.APPLICATION_JSON)
-	public List<Employee> getEmployeesList(){
+	public List<Employee> getEmployeesList() {
 		return EmpList.getEmpList();
-		
+
 	}
-	
+
 	@GET
 	@Path("list/{id}")
-	@Produces({MediaType.APPLICATION_JSON,MediaType.APPLICATION_XML})
-	public List<Employee> getEmployee(@PathParam("id") int id){
+	@Produces({ MediaType.APPLICATION_JSON, MediaType.APPLICATION_XML })
+	public List<Employee> getEmployee(@PathParam("id") int id) {
 		return EmpList.getEmpList(id);
 	}
-	
+
 	@POST
 	@Path("add")
-	@Consumes({MediaType.APPLICATION_JSON})
-	@Produces({MediaType.APPLICATION_JSON})
-	public ResultOK createEmployee(Employee emp){
-		
+	@Consumes({ MediaType.APPLICATION_JSON })
+	@Produces({ MediaType.APPLICATION_JSON })
+	public Message createEmployee(Employee emp) {
+
 		EmpList.addEmployee(emp);
-		
-		result = new ResultOK("Employee Added");
+
+		result = new Message("Employee Added");
 		System.out.println(result.getMessage());
 		return result;
 	}
-	
+
 	@PUT
 	@Path("update")
-	@Consumes({MediaType.APPLICATION_JSON})
-	@Produces({MediaType.APPLICATION_JSON})
-	public ResultOK updateEmployee(Employee emp){
-		
+	@Consumes({ MediaType.APPLICATION_JSON })
+	@Produces({ MediaType.APPLICATION_JSON })
+	public Message updateEmployee(Employee emp) {
+
 		EmpList.updateEmployee(emp);
-		
-		result = new ResultOK("Employee Added");
+
+		result = new Message("Employee Added");
 		System.out.println(result.getMessage());
 		return result;
 	}
-	
+
 	@DELETE
 	@Path("delete/{id}")
-	@Consumes({MediaType.APPLICATION_JSON})
-	@Produces({MediaType.APPLICATION_JSON})
-	public ResultOK deleteEmployee(@PathParam("id") int id){
-		
+	@Consumes({ MediaType.APPLICATION_JSON })
+	@Produces({ MediaType.APPLICATION_JSON })
+	public Message deleteEmployee(@PathParam("id") int id) {
+
 		String s = EmpList.deleteEmployee(id);
-		
-		result = new ResultOK(s);
+
+		result = new Message(s);
 		System.out.println(result.getMessage());
 		return result;
 	}
-	
+
 }

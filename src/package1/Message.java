@@ -1,15 +1,13 @@
 package package1;
 
-public class ResultOK {
-	
+public class Message {
+
 	String message;
 
-
-
-	public ResultOK(String result) {
-		this.message=result;
+	public Message(String result) {
+		this.message = result;
 	}
-	
+
 	public String getMessage() {
 		return message;
 	}
@@ -18,6 +16,5 @@ public class ResultOK {
 	public String toString() {
 		return "ResultOK [result=" + message + "]";
 	}
-	
 
 }

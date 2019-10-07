@@ -1,7 +1,7 @@
 {
 	"info": {
-		"_postman_id": "71e9ab77-6030-405a-b50d-97c1767fcd23",
-		"name": "TestEmployeeCollection copy",
+		"_postman_id": "93ad5743-24a7-459c-880f-7c136187b524",
+		"name": "CreateRESTfulService",
 		"description": "This is a collection for CreateRESTFulService.war",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -16,14 +16,14 @@
 					"raw": ""
 				},
 				"url": {
-					"raw": "http://localhost:8080/CreateRESTFulService/rest/employee/list",
+					"raw": "http://localhost:8080/CreateRESTfulService/rest/employee/list",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
 					"port": "8080",
 					"path": [
-						"CreateRESTFulService",
+						"CreateRESTfulService",
 						"rest",
 						"employee",
 						"list"
@@ -47,18 +47,17 @@
 					"raw": "{\n        \"firstName\": \"Joe\",\n        \"id\": 1004,\n        \"lastName\": \"Lisa\"\n}"
 				},
 				"url": {
-					"raw": "http://localhost:8080/CreateRESTFulService/rest/employee/update/1004",
+					"raw": "http://localhost:8080/CreateRESTfulService/rest/employee/update",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
 					"port": "8080",
 					"path": [
-						"CreateRESTFulService",
+						"CreateRESTfulService",
 						"rest",
 						"employee",
-						"update",
-						"1004"
+						"update"
 					]
 				}
 			},
@@ -79,14 +78,14 @@
 					"raw": "{\n        \"firstName\": \"Alex\",\n        \"id\": 1007,\n        \"lastName\": \"The Great\"\n}"
 				},
 				"url": {
-					"raw": "http://localhost:8080/CreateRESTFulService/rest/employee/add",
+					"raw": "http://localhost:8080/CreateRESTfulService/rest/employee/add",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
 					"port": "8080",
 					"path": [
-						"CreateRESTFulService",
+						"CreateRESTfulService",
 						"rest",
 						"employee",
 						"add"
@@ -110,14 +109,14 @@
 					"raw": ""
 				},
 				"url": {
-					"raw": "http://localhost:8080/CreateRESTFulService/rest/employee/delete/1001",
+					"raw": "http://localhost:8080/CreateRESTfulService/rest/employee/delete/1001",
 					"protocol": "http",
 					"host": [
 						"localhost"
 					],
 					"port": "8080",
 					"path": [
-						"CreateRESTFulService",
+						"CreateRESTfulService",
 						"rest",
 						"employee",
 						"delete",
