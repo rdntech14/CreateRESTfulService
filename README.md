@@ -253,7 +253,7 @@ Output :
 
 200 (OK) or 204 (No Content)  - if an existing resource is modified, either the 200 (OK) or 204 (No Content)
 
-***DELTE***
+***DELETE***
 
 200 (OK) if the response includes an entity describing the status
 
